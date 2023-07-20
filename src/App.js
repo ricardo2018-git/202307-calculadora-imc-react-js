@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Calculadora IMC</h1>
+      <h1>Calculadora IMC.</h1>
       <Peso peso={peso} setPeso={setPeso}/>
       <Altura altura={altura} setAltura={setAltura}/>
       <CalcularIMC peso={peso} altura={altura} setResultado={setResultado}/>
