@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
+import TabelaIMC from './componentes/TabelaIMC'
+import Peso from './componentes/Peso'
+import Altura from './componentes/Altura'
+import CalcularIMC from './componentes/CalcularIMC'
+import ResultadoIMC from './componentes/ResultadoIMC'
 
-function App() {
+export default function App() {
+
+  const[peso,setPeso]=useState(0)
+  const[altura,setAltura]=useState(0)
+  const[resultado,setResultado]=useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Peso peso={peso} setPeso={setPeso}/>
+      <Altura altura={altura} setAltura={setAltura}/>
+      <CalcularIMC peso={peso} altura={altura} setResultado={setResultado}/>
+      <ResultadoIMC resultado={resultado}/>
+      <TabelaIMC/>
+    </>
   );
 }
-
-export default App;
