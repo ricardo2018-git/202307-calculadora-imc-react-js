@@ -1,15 +1,20 @@
 import React from 'react'
 
-export default function CalcularIMC(props){// calculo IMC
-    const calc=()=>{
-        const r = props.peso/(props.altura*props.altura)
-        props.setResultado(r)
-        console.log(r)
+export default class CalcularIMC extends React.Component{
+    constructor(props){
+        super(props)
+        this.calc=this.calc.bind(this)
+    }
+    calc=()=>{
+        const r = this.props.peso/(this.props.altura*this.props.altura)
+        this.props.setResultado(r)
+        //console.log(r)
     } 
-    
-    return(
-        <div>
-            <button onClick={calc}>Calcular</button>
-        </div>
-    );
+    render(){
+        return(
+            <div>
+                <button onClick={this.calc}>Calcular</button>
+            </div>
+        );
+    }
 }
